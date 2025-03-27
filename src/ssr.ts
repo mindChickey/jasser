@@ -65,6 +65,7 @@ export class Jasser {
   }
 
   public async dump() {
-    this.routes.map((route) => writeRoute(this.rootDir, route))
+    let ps = this.routes.map((route) => writeRoute(this.rootDir, route))
+    return Promise.all(ps)
   }
 }

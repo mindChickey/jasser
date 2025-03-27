@@ -1,7 +1,6 @@
 {
   "name": "jasser",
-  "module": "index.ts",
-  "type": "module",
+  "main": "./src/index.ts",
   "dependencies": {
     "express": "^4.21.2",
     "jsdom": "^26.0.0"
