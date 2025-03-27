@@ -1,5 +1,13 @@
 
 # feature
-  ssr
-  dev
   browser document
+  ts 如果运行
+  是否需要打包
+
+  ssr
+  后端调用
+  html 后缀
+  文件和接口冲突
+  API参数
+  异步组件
+  全局变量

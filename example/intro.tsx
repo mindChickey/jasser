@@ -1,15 +1,15 @@
 
-import { createElement } from "./tsx-runtime"
+import { createElement } from "../src"
 
-function IndexPage(){
+function IntroPage(){
   return <html>
     <body>
       <div>
-        index
+        <div>intro</div>
         <a href="/download">download</a>
       </div>
     </body>
   </html>
 }
 
-export default IndexPage
+export default IntroPage

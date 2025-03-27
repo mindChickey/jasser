@@ -4,7 +4,6 @@ import path from 'path'
 import fs from 'fs'
 
 type HtmlRoute = {
-  abspath: string
   routePath: string
   getElem: () => Promise<HTMLElement>
 }
@@ -16,7 +15,7 @@ function makeRouteHtml(dirPath: string, filePath: string, routePath: string, fun
     let p = await import(abspath + '?jasser_nonce=' + nonce)
     return func(p.default)
   }
-  return {abspath, routePath, getElem}
+  return {routePath, getElem}
 }
 
 function addHtmlRoute(app: express.Express, route: HtmlRoute){
@@ -44,7 +43,7 @@ async function writeRoute(rootDir: string, route: HtmlRoute) {
   }
 }
 
-export class JasserAPI {
+export class Jasser {
   public routes: HtmlRoute[] = []
   public app = express()
   

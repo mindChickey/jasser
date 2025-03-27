@@ -1,12 +1,12 @@
 
-import { createElement } from "./tsx-runtime"
+import { createElement } from "../src"
 
 function DownloadPage(){
   return <html>
     <body>
       <div>
-        download1
-        <a href="/index">index</a>
+        <div>download</div>
+        <a href="/intro">intro</a>
       </div>
     </body>
   </html>
