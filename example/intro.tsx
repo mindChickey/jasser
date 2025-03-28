@@ -1,7 +1,7 @@
 
 import { createElement } from "../src"
 
-function IntroPage(){
+export function IntroPage(){
   return <html>
     <body>
       <div>
@@ -11,5 +11,3 @@ function IntroPage(){
     </body>
   </html>
 }
-
-export default IntroPage

@@ -1,7 +1,7 @@
 
 import { createElement } from "../src"
 
-function DownloadPage(){
+export function DownloadPage(){
   return <html>
     <body>
       <div>
@@ -11,5 +11,3 @@ function DownloadPage(){
     </body>
   </html>
 }
-
-export default DownloadPage

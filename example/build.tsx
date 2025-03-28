@@ -1,17 +1,16 @@
 
-import { createElement, Jasser } from '../src'
+import { createElement, writeRouteHtml } from '../src'
+import { DownloadPage } from './download'
+import { IntroPage } from './intro'
 
-function writeLang(jasser: Jasser){
-  jasser.addRouteHtml(__dirname, './intro', "/intro", createElement)
-  jasser.addRouteHtml(__dirname, './download', "/download", createElement)
+function writeLang(rootDir: string){
+  writeRouteHtml(rootDir, "/intro", <IntroPage />)
+  writeRouteHtml(rootDir, "/download", <DownloadPage />)
 }
 
 function all(){
-  let jasser = new Jasser('./public')
-  writeLang(jasser)
-
-  jasser.app.get('/', (req, res) => { res.redirect('/intro') })
-  jasser.server(8190)
+  let rootDir = './public'
+  writeLang(rootDir)
 }
 
 all()

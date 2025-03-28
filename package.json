@@ -1,12 +1,13 @@
 {
   "name": "jasser",
   "main": "./src/index.ts",
+  "scripts": {
+    "build": "tsc"
+  },
   "dependencies": {
-    "express": "^4.21.2",
     "jsdom": "^26.0.0"
   },
   "devDependencies": {
-    "@types/express": "^5.0.1",
     "@types/jsdom": "^21.1.7"
   },
   "peerDependencies": {

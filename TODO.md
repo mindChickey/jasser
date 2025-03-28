@@ -1,8 +1,6 @@
 
 # feature
   browser document
-  ts 如果运行
-  是否需要打包
 
   ssr
   后端调用
