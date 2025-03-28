@@ -18,6 +18,6 @@ async function writeRoute(filePath: string, dom: HTMLElement) {
 }
 
 export function writeRouteHtml(rootDir: string, routePath: string, dom: HTMLElement) {
-  let filePath = rootDir + routePath + '.html'
+  let filePath = rootDir + routePath
   return writeRoute(filePath, dom)
 }
