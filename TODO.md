@@ -1,7 +1,5 @@
 
 # feature
-  browser document
-
   ssr
   后端调用
   html 后缀

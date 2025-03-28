@@ -1,7 +1,15 @@
 
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-const { document } = (new JSDOM(`...`)).window;
+function getDocument(){
+  if(typeof document !== 'undefined'){
+    return document
+  } else {
+    let jsdom = require("jsdom")
+    let { JSDOM } = jsdom;
+    return (new JSDOM(`...`)).window.document
+  }
+}
+
+let document1 = getDocument()
 
 function formatStyle(value: object) {
   function f([k, v]: [string, any]){
@@ -31,7 +39,7 @@ function appendChild(parent: HTMLElement, child: any) {
   if (Array.isArray(child)){
     child.forEach((nestedChild) => appendChild(parent, nestedChild))
   } else {
-    let child1 = child.nodeType ? child : document.createTextNode(child)
+    let child1 = child.nodeType ? child : document1.createTextNode(child)
     parent.appendChild(child1)
   }
 }
@@ -41,7 +49,7 @@ export function createElement(tag: any, props?: object, ...children: any[]): HTM
     let props1 = children.length ? {...props, children} : props
     return tag(props1) as HTMLElement
   } else {
-    let element = document.createElement(tag) as HTMLElement
+    let element = document1.createElement(tag) as HTMLElement
     Object.entries(props || {}).forEach((prop) => handleProp(element, prop))
     children.forEach((child) => appendChild(element, child))
     return element

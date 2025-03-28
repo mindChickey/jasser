@@ -1,6 +1,6 @@
 
 export { createElement } from './tsx-runtime'
-export { writeRouteHtml } from './ssr'
+export { writeRouteHtml } from './writeRoute'
 
 declare global {
   namespace JSX {
