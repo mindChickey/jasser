@@ -2,8 +2,9 @@
 import path from 'path'
 import fs from 'fs'
 
-async function writeRoute(filePath: string, dom: HTMLElement) {
+export async function writeRouteHtml(rootDir: string, routePath: string, dom: HTMLElement) {
   try {
+    let filePath = rootDir + routePath
     const dirname = path.dirname(filePath);
     if (!fs.existsSync(dirname)) {
       fs.mkdirSync(dirname, { recursive: true });
@@ -15,9 +16,4 @@ async function writeRoute(filePath: string, dom: HTMLElement) {
     console.error(`write html failed: ${error.message}`);
     throw error;
   }
-}
-
-export function writeRouteHtml(rootDir: string, routePath: string, dom: HTMLElement) {
-  let filePath = rootDir + routePath
-  return writeRoute(filePath, dom)
 }
