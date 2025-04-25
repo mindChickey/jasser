@@ -1,11 +1,12 @@
 
 import path from 'path'
 import fs from 'fs'
+import { createElement } from './tsx-runtime'
 
 export async function writeRouteHtml(rootDir: string, routePath: string, dom: HTMLElement) {
   try {
     let filePath = rootDir + routePath
-    const dirname = path.dirname(filePath);
+    let dirname = path.dirname(filePath);
     if (!fs.existsSync(dirname)) {
       fs.mkdirSync(dirname, { recursive: true });
     }
@@ -16,4 +17,12 @@ export async function writeRouteHtml(rootDir: string, routePath: string, dom: HT
     console.error(`write html failed: ${error.message}`);
     throw error;
   }
+}
+
+export function InlineStyle({dirname, relpath}:{dirname: string, relpath: string}){
+  let absolutePath = `${dirname}/${relpath}`
+  let cssContent = fs.readFileSync(absolutePath, 'utf-8')
+  let styleElement = createElement('style')
+  styleElement.textContent = cssContent
+  return styleElement
 }
