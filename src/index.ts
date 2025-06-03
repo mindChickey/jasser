@@ -1,6 +1,8 @@
 
 export { createElement } from './tsx-runtime'
-export { writeRouteHtml, InlineStyle } from './writeRoute'
+export { writeStaticFile, writeRouteHtml } from './writeRoute'
+export { Sitemap, writeSitemap } from './sitemap'
+export { type OptionT, Select, readContent } from './widget'
 
 declare global {
   namespace JSX {

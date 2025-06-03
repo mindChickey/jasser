@@ -36,7 +36,8 @@ function handleProp(element: HTMLElement, prop: [string, any]) {
 }
 
 function appendChild(parent: HTMLElement, child: any) {
-  if (Array.isArray(child)){
+  if(child === undefined){
+  } else if (Array.isArray(child)){
     child.forEach((nestedChild) => appendChild(parent, nestedChild))
   } else {
     let child1 = child.nodeType ? child : document.createTextNode(child)
