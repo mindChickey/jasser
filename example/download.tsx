@@ -6,7 +6,7 @@ export function DownloadPage(){
     <body>
       <div>
         <div>download</div>
-        <a href="/intro">intro</a>
+        <a href="/intro.html">intro</a>
       </div>
     </body>
   </html>

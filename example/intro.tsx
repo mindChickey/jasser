@@ -1,14 +1,18 @@
 
 import { createElement, readContent } from "../src"
 
+function Content({title}:{title: string}){
+  return <div>
+    <div>{title}</div>
+    <a href="/download.html">download</a>
+  </div>
+}
+
 export function IntroPage(){
   return <html>
     <body>
-      <div>
-        <script defer>{readContent(__dirname, "./intro.js")}</script>
-        <div>intro</div>
-        <a href="/download">download</a>
-      </div>
+      <script defer>{readContent(__dirname, "./intro-script.js")}</script>
+      <Content title="intro" />
     </body>
   </html>
 }
