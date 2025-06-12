@@ -4,8 +4,8 @@ import { DownloadPage } from './download'
 import { IntroPage } from './intro'
 
 function writeLang(rootDir: string){
-  writeRouteHtml(rootDir, "/intro", <IntroPage />)
-  writeRouteHtml(rootDir, "/download", <DownloadPage />)
+  writeRouteHtml(rootDir, "/intro.html", <IntroPage />)
+  writeRouteHtml(rootDir, "/download.html", <DownloadPage />)
 }
 
 function all(){

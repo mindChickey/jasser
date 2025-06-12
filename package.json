@@ -1,6 +1,14 @@
 {
   "name": "jasser",
+  "version": "1.1.1",
+  "description": "A SSG(Static Site Generation) tool",
   "main": "./src/index.ts",
+  "keywords": ["dom", "html", "ssg", "jsx", "tsx"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mindChickey/jasser"
+  },
   "scripts": {
     "build": "tsc"
   },

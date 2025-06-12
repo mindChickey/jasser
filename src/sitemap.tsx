@@ -5,11 +5,10 @@ import { writeStaticFile } from './writeRoute'
 function Site({loc, lastmod, changefreq, priority}:{loc: string, lastmod?: string, changefreq?: string, priority?: number}) {
   return <url>
     <loc>{loc}</loc>
+    {lastmod && <lastmod>{lastmod}</lastmod>}
+    {changefreq && <changefreq>{changefreq}</changefreq>}
+    {priority && <priority>{priority}</priority>}
   </url>
-
-    // {lastmod && <lastmod>{lastmod}</lastmod>}
-    // {changefreq && <changefreq>{changefreq}</changefreq>}
-    // {priority && <priority>{priority}</priority>}
 }
 
 export function Sitemap({routes}:{routes: string[]}) {
